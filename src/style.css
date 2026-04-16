@@ -22,6 +22,33 @@ body {
   margin: 0 auto;
 }
 
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card h4 {
+  font-size: 13px;
+  color: #718096;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 12px;
+  color: #2d3748;
+  margin: 4px 0;
+}
+
 .container {
   background: white;
   border-radius: 12px;
@@ -43,6 +70,11 @@ h2 {
   margin-bottom: 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid #42b883;
+}
+
+h3 {
+  font-size: 16px;
+  color: #2d3748;
 }
 
 .form-group {
@@ -96,6 +128,11 @@ select:focus, input:focus {
   background-color: #f0fdf4;
 }
 
+.button-row {
+  display: flex;
+  gap: 12px;
+}
+
 .btn {
   padding: 12px 24px;
   border: none;
@@ -109,7 +146,7 @@ select:focus, input:focus {
 .btn-primary {
   background-color: #42b883;
   color: white;
-  width: 100%;
+  flex: 1;
 }
 
 .btn-primary:hover {
@@ -119,6 +156,76 @@ select:focus, input:focus {
 .btn-primary:disabled {
   background-color: #a0aec0;
   cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e0;
+}
+
+.btn-nav {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #4a5568;
+}
+
+.btn-nav:hover {
+  background-color: #f7fafc;
+}
+
+.tab-container {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 4px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #718096;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background-color: #42b883;
+  color: white;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.filter-bar label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.filter-bar select {
+  flex: 1;
 }
 
 .record-item {
@@ -145,6 +252,7 @@ select:focus, input:focus {
 .record-date {
   font-size: 12px;
   color: #718096;
+  margin-right: 8px;
 }
 
 .record-detail {
@@ -178,16 +286,122 @@ select:focus, input:focus {
   margin-top: 12px;
 }
 
+.edit-btn,
 .delete-btn {
   background: none;
   border: none;
-  color: #e53e3e;
   cursor: pointer;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 4px;
+  margin-left: 4px;
+}
+
+.edit-btn {
+  color: #3182ce;
+}
+
+.edit-btn:hover {
+  background-color: #bee3f8;
+}
+
+.delete-btn {
+  color: #e53e3e;
 }
 
 .delete-btn:hover {
   background-color: #fed7d7;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  padding: 8px;
+  font-weight: 600;
+  color: #718096;
+  font-size: 12px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: #f7fafc;
+}
+
+.calendar-day.has-record {
+  background-color: #f0fdf4;
+  color: #2f855a;
+  font-weight: 600;
+}
+
+.calendar-day.selected {
+  background-color: #42b883 !important;
+  color: white;
+}
+
+.record-dot {
+  width: 4px;
+  height: 4px;
+  background-color: #42b883;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 6px;
+}
+
+.calendar-day.selected .record-dot {
+  background-color: white;
+}
+
+.calendar-detail {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #718096;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  background-color: #f7fafc;
 }
