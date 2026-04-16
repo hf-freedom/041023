@@ -45,6 +45,11 @@ h2 {
   border-bottom: 2px solid #42b883;
 }
 
+h3 {
+  font-size: 16px;
+  color: #2c3e50;
+}
+
 .form-group {
   margin-bottom: 16px;
 }
@@ -109,7 +114,7 @@ select:focus, input:focus {
 .btn-primary {
   background-color: #42b883;
   color: white;
-  width: 100%;
+  flex: 1;
 }
 
 .btn-primary:hover {
@@ -119,6 +124,20 @@ select:focus, input:focus {
 .btn-primary:disabled {
   background-color: #a0aec0;
   cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e0;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
 }
 
 .record-item {
@@ -145,6 +164,7 @@ select:focus, input:focus {
 .record-date {
   font-size: 12px;
   color: #718096;
+  margin-right: 8px;
 }
 
 .record-detail {
@@ -190,4 +210,369 @@ select:focus, input:focus {
 
 .delete-btn:hover {
   background-color: #fed7d7;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #3182ce;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.edit-btn:hover {
+  background-color: #bee3f8;
+}
+
+.record-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* 导航标签 */
+.nav-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tab {
+  flex: 1;
+  padding: 12px 8px;
+  border: none;
+  background: transparent;
+  color: #718096;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.nav-tab:hover {
+  background: #f7fafc;
+}
+
+.nav-tab.active {
+  background: #42b883;
+  color: white;
+}
+
+/* 区块头部 */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.filter-select {
+  width: auto;
+  min-width: 120px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.month-input {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* 今日汇总 */
+.summary-container {
+  background: linear-gradient(135deg, #42b883 0%, #3aa876 100%);
+  color: white;
+}
+
+.summary-container h2 {
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.summary-label {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* 历史记录 */
+.history-list {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.history-group {
+  margin-bottom: 20px;
+}
+
+.history-date-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #edf2f7;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.history-date {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.history-weekday {
+  color: #718096;
+  font-size: 14px;
+}
+
+.history-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: #718096;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.history-item {
+  margin-left: 16px;
+}
+
+/* 日历 */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar-nav {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #edf2f7;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.calendar-nav:hover {
+  background: #e2e8f0;
+}
+
+.calendar-month {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-size: 12px;
+  color: #718096;
+  padding: 8px;
+  font-weight: 500;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.calendar-day:not(.empty):hover {
+  background: #f7fafc;
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.day-number {
+  font-size: 14px;
+  color: #2d3748;
+}
+
+.record-dot {
+  width: 6px;
+  height: 6px;
+  background: #42b883;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+.calendar-day.has-record .day-number {
+  color: #42b883;
+  font-weight: 600;
+}
+
+.calendar-day.has-record {
+  background: #f0fdf4;
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #718096;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  background: #42b883;
+  border-radius: 50%;
+}
+
+/* 日期详情列表（页面内展示） */
+.date-detail-container {
+  background: #f8fafc;
+  border: 2px solid #42b883;
+}
+
+.date-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.date-detail-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.close-detail-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.close-detail-btn:hover {
+  background: #e2e8f0;
+}
+
+.calendar-day.selected {
+  background: #42b883;
+}
+
+.calendar-day.selected .day-number {
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-day.selected .record-dot {
+  background: white;
+}
+
+/* 统计数据 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  border: 2px solid #e2e8f0;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #42b883;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #718096;
+}
+
+/* 响应式 */
+@media (max-width: 480px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-tab {
+    font-size: 12px;
+    padding: 10px 4px;
+  }
+  
+  .calendar-day {
+    font-size: 12px;
+  }
 }
